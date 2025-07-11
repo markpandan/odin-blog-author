@@ -1,0 +1,10 @@
+.editPostContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 16px;
+}

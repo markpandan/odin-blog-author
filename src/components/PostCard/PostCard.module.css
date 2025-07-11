@@ -1,0 +1,18 @@
+.postCardContainer {
+  cursor: pointer;
+  padding: 1rem;
+  border: var(--default-border-value);
+  border-radius: var(--default-border-radius);
+  box-shadow: var(--default-box-shadow-value);
+  height: 10rem;
+}
+
+.postCardContainer:hover {
+  transform: scale(1.02);
+}
+
+.postCardHeader {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+}

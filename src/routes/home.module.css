@@ -1,0 +1,40 @@
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.postListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.statsContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border: var(--default-border-value);
+  border-radius: var(--default-border-radius);
+  box-shadow: var(--default-box-shadow-value);
+  text-align: center;
+}
+
+.statsContainer > * {
+  flex: 0 0 50%;
+}
+
+.statsNumber {
+  font-size: 3rem;
+}
+
+.statsDescription {
+  font-size: 1rem;
+  margin-top: 8px;
+}
+
+.postTabList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

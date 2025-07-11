@@ -1,0 +1,20 @@
+.postTabContainer {
+  cursor: default;
+  padding: 1rem;
+  border: var(--default-border-value);
+  border-radius: var(--default-border-radius);
+  box-shadow: var(--default-box-shadow-value);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.postTabContainer:hover {
+  background-color: var(--secondary-color);
+}
+
+.buttonGroup > * {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
