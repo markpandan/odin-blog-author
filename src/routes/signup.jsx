@@ -24,7 +24,7 @@ const Signup = () => {
             ></input>
           </div>
           <div>
-            <button type="submit" className={styles.loginButton}>
+            <button type="submit" className={styles.signupButton}>
               Sign In
             </button>
           </div>

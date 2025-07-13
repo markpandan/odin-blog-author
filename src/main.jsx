@@ -9,6 +9,7 @@ import Home from "./routes/home.jsx";
 import EditPost from "./routes/edit-post.jsx";
 import Login from "./routes/login.jsx";
 import Signup from "./routes/signup.jsx";
+import Dashboard from "./routes/dashboard.jsx";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
       },
       {
         path: "login",

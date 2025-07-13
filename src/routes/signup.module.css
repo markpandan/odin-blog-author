@@ -18,7 +18,7 @@
   text-align: center;
 }
 
-.loginButton {
+.signupButton {
   background-color: var(--tertiary-color);
   color: black;
 }
