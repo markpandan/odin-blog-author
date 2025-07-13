@@ -24,11 +24,15 @@ export const fetchPost = async (route, body, token) => {
   });
 };
 
-export const fetchPut = async (route, signal) => {
+export const fetchPut = async (route, body, token) => {
   return await fetch(`${HOST_NAME}/${route}`, {
     method: "PUT",
+    headers: {
+      Authorization: token || "",
+      "Content-Type": "application/json",
+    },
     mode: "cors",
-    signal,
+    body: JSON.stringify(body),
   });
 };
 

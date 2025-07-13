@@ -33,6 +33,12 @@
   margin-top: 8px;
 }
 
+.postTabHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
+}
+
 .postTabList {
   display: flex;
   flex-direction: column;

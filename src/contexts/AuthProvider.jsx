@@ -18,6 +18,7 @@ export const AuthProvider = ({ children }) => {
     const fetchUser = async (token) => {
       const signal = abortController.signal;
       try {
+        // TODO: Fix this to use the jwt-decode instead
         const response = await fetchGet("authors/token", signal, token);
         const jsonData = await response.json();
         setUser(jsonData.output);

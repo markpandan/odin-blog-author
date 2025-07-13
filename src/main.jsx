@@ -6,7 +6,7 @@ import "./main.css";
 import ErrorPage from "./error-page.jsx";
 import Root from "./routes/root.jsx";
 import Home from "./routes/home.jsx";
-import EditPost from "./routes/edit-post.jsx";
+import ManagePost from "./routes/manage-post.jsx";
 import Login from "./routes/login.jsx";
 import Logout from "./routes/logout.jsx";
 import Signup from "./routes/signup.jsx";
@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path: "authors/:authorName/posts/:postId",
-        element: <EditPost />,
+        element: <ManagePost />,
       },
     ],
   },

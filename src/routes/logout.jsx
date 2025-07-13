@@ -6,7 +6,7 @@ const Logout = () => {
   const { setToken } = useAuth();
 
   useEffect(() => {
-    setToken("");
+    setToken();
   }, [setToken]);
 
   return <Navigate to="/" />;

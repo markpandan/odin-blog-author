@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const useForm = (fields) => {
   const [inputs, setInputs] = useState({ ...fields });
@@ -10,7 +10,7 @@ const useForm = (fields) => {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
-  return { inputs, handleChange };
+  return { inputs, setInputs, handleChange };
 };
 
 export default useForm;

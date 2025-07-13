@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./PostTab.module.css";
 import { Link } from "react-router-dom";
 
-const PostTab = ({ children }) => {
+const PostTab = ({ user, postId, children }) => {
   const [showButtons, setShowButtons] = useState(false);
 
   return (
@@ -16,7 +16,7 @@ const PostTab = ({ children }) => {
         className={styles.buttonGroup}
         style={{ display: showButtons ? "block" : "none" }}
       >
-        <Link to={"/authors/@mark/posts/123456"}>Edit</Link>
+        <Link to={`/authors/@${user}/posts/${postId}`}>Edit</Link>
       </div>
     </div>
   );
