@@ -8,8 +8,10 @@ import Root from "./routes/root.jsx";
 import Home from "./routes/home.jsx";
 import EditPost from "./routes/edit-post.jsx";
 import Login from "./routes/login.jsx";
+import Logout from "./routes/logout.jsx";
 import Signup from "./routes/signup.jsx";
 import Dashboard from "./routes/dashboard.jsx";
+import AuthProvider from "./contexts/AuthProvider.jsx";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +36,10 @@ const router = createBrowserRouter([
         element: <Signup />,
       },
       {
+        path: "logout",
+        element: <Logout />,
+      },
+      {
         path: "authors/:authorName/posts/:postId",
         element: <EditPost />,
       },
@@ -43,6 +49,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>
 );

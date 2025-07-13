@@ -1,7 +1,8 @@
-import { createContext, useState, useEffect, useMemo, useContext } from "react";
-import { fetchGet } from "./fetchUtils";
+import { createContext, useState, useEffect, useMemo } from "react";
+import { fetchGet } from "../utils/fetchUtils";
 
-const AuthContext = createContext();
+// eslint-disable-next-line react-refresh/only-export-components
+export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [token, setToken_] = useState(localStorage.getItem("token"));
@@ -17,7 +18,7 @@ export const AuthProvider = ({ children }) => {
     const fetchUser = async (token) => {
       const signal = abortController.signal;
       try {
-        const response = await fetchGet("readers/token", signal, token);
+        const response = await fetchGet("authors/token", signal, token);
         const jsonData = await response.json();
         setUser(jsonData.output);
       } catch (error) {
@@ -47,11 +48,6 @@ export const AuthProvider = ({ children }) => {
   return (
     <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
   );
-};
-
-// eslint-disable-next-line react-refresh/only-export-components
-export const useAuth = () => {
-  return useContext(AuthContext);
 };
 
 export default AuthProvider;

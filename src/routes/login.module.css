@@ -11,6 +11,10 @@
   padding: 1rem;
   box-shadow: var(--default-box-shadow-value);
   background-color: var(--secondary-color);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .loginFormContainer > *,
@@ -20,5 +24,15 @@
 
 .loginButton {
   background-color: var(--tertiary-color);
+  color: black;
+}
+
+.errorContainer {
+  padding: 1rem;
+  border-radius: var(--default-border-radius);
+  border: var(--default-border-value);
+  background-color: var(--tertiary-color);
+  box-shadow: var(--default-box-shadow-value);
+
   color: black;
 }
