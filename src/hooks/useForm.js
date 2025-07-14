@@ -5,7 +5,13 @@ const useForm = (fields) => {
 
   const handleChange = (e) => {
     const name = e.target.name;
-    const value = e.target.value;
+
+    let value;
+    if (e.target.type == "checkbox") {
+      value = e.target.checked;
+    } else {
+      value = e.target.value;
+    }
 
     setInputs((values) => ({ ...values, [name]: value }));
   };

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import useForm from "../hooks/useForm";
 import { fetchGet, fetchPost, fetchPut } from "../utils/fetchUtils";
@@ -11,6 +11,7 @@ const ManagePost = () => {
   const { inputs, setInputs, handleChange } = useForm({
     title: "",
     content: "",
+    is_published: false,
   });
   // const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -21,18 +22,11 @@ const ManagePost = () => {
     e.preventDefault();
 
     let response;
+
     if (postId == "new") {
-      response = await fetchPost(
-        routeURL,
-        { ...inputs, is_published: true },
-        token
-      );
+      response = await fetchPost(routeURL, { ...inputs }, token);
     } else {
-      response = await fetchPut(
-        routeURL,
-        { ...inputs, is_published: true },
-        token
-      );
+      response = await fetchPut(routeURL, { ...inputs }, token);
     }
 
     // const data = await response.json();
@@ -55,7 +49,11 @@ const ManagePost = () => {
           );
 
           const post = await response.json();
-          setInputs({ title: post.output.title, content: post.output.content });
+          setInputs({
+            title: post.output.title,
+            content: post.output.content,
+            is_published: post.output.is_published,
+          });
         } catch (error) {
           if (!error.name === "AbortError") {
             console.error(error.message);
@@ -103,8 +101,21 @@ const ManagePost = () => {
           ></textarea>
         </div>
         <div className={styles.buttonGroup}>
+          <div>
+            <input
+              type="checkbox"
+              name="is_published"
+              id="is_published"
+              onChange={handleChange}
+              checked={inputs.is_published}
+            />
+            <label htmlFor="is_published">Publish</label>
+          </div>
+
           <button type="submit">Save</button>
-          <button className="cancel-button">Cancel</button>
+          <Link to={"/dashboard"}>
+            <button className="cancel-button">Cancel</button>
+          </Link>
         </div>
       </form>
     </div>

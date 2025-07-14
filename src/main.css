@@ -53,11 +53,15 @@ form {
   gap: 1rem;
 }
 
-form input {
+input[type="text"],
+input[type="email"],
+input[type="password"] {
   display: block;
 }
 
-input,
+input[type="text"],
+input[type="email"],
+input[type="password"],
 textarea {
   width: 100%;
   padding: 0.5rem;
